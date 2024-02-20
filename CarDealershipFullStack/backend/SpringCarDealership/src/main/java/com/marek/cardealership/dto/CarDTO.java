@@ -18,6 +18,6 @@ public class CarDTO {
     private BigDecimal price;
     private int year;
     private String description;
-    private String imageUrl;
+    private String image;
 
 }

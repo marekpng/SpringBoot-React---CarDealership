@@ -6,7 +6,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Entity
+@Entity(name = "car")
 @Getter
 @Setter
 public class CarEntity {
@@ -31,6 +31,6 @@ public class CarEntity {
     private String description;
 
     @Column(nullable = false)
-    private String imageUrl;
+    private String image;
 
 }
