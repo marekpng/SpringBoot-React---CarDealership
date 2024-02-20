@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity(name = "car")
 @Getter
@@ -32,5 +33,8 @@ public class CarEntity {
 
     @Column(nullable = false)
     private String image;
+
+    @OneToMany(mappedBy = "carEntity")
+    private List<ReviewEntity> reviews;
 
 }
