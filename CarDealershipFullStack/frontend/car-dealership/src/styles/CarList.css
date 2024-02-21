@@ -1,9 +1,9 @@
-.car-list {
+/* .car-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     color:rgb(22, 27, 27)
-  }
+  } */
   
   .car-box {
     width: calc(33.33% - 20px);
@@ -110,3 +110,7 @@
 }
   
 
+Link {
+  color: black;
+  text-decoration: none;
+}

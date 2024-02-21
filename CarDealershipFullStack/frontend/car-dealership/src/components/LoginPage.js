@@ -28,13 +28,13 @@ const LoginPage = ({ isLoggedIn, setIsLoggedIn }) => {
                 throw new Error('Pri prihlasovaní nastala chyba.');
             }
 
-            // Vynulujeme chybovu spravu, ak bola zobrazena
+            
             setErrorMessage('');
             
-            // Nastavíme isLoggedIn na true
+            
             setIsLoggedIn(true);
 
-            // Navigujeme na domovsku stranku
+           
             navigate('/');
         } catch (error) {
             setErrorMessage(error.message);

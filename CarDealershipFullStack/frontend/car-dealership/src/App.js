@@ -1,16 +1,15 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import CarList from './car/CarList';
 import AddCarForm from './car/AddCarForm';
-import carsData from './data/carsData';
 import EditCarForm from './car/EditCarForm';
 import CarDetail from './car/CarDetail';
 import Contact from './pages/Contact';
 import LoginPage from './components/LoginPage';
 import { FaMobileAlt, FaEnvelope } from 'react-icons/fa';
 import RegisterPage from './components/RegisterPage';
-
 import { useState } from 'react';
+
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
@@ -58,13 +57,15 @@ const App = () => {
       <div className="App">
         <header className="App-header">
           <Routes>
-            <Route path="/" element={<CarList cars={carsData} />} />
+            <Route path="/" element={<CarList />} />
             <Route path="/add-car" element={<AddCarForm />} />
             <Route path="/edit-car/:id" element={<EditCarForm />} />
             <Route path="/car/detail/:id" element={<CarDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<RegisterPage />} />
+            
+
             
           </Routes>
           

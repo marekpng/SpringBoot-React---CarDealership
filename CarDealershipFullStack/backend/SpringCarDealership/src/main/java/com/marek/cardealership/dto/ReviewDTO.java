@@ -19,10 +19,13 @@ public class ReviewDTO {
     private Long id;
 
     @NotNull
+    private String userEmail;
+
+    @NotNull
     private String description;
 
     @NotNull
-    private String car_entity_id;
+    private long car_entity_id;
 
     @NotNull
     private Date date;

@@ -18,7 +18,7 @@ const RegisterPage = () => {
         try {
             const response = await axios.post('http://localhost:8080/api/user', formData);
             if (response.status === 200) {
-                // Uložte token do lokálneho úložiska alebo kontextu, ak je používateľ úspešne zaregistrovaný
+                
                 navigate('/login');
             }
         } catch (error) {

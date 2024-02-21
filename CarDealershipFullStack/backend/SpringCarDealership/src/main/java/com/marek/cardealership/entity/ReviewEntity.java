@@ -12,9 +12,14 @@ import java.util.Date;
 @Setter
 public class ReviewEntity {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
+    @Column(nullable = false)
+    private String userEmail;
 
     @ManyToOne
     private CarEntity carEntity;
@@ -24,6 +29,11 @@ public class ReviewEntity {
 
     @Column(nullable = false)
     private Date date;
+
+
+    public Long getId() {
+        return id;
+    }
 
 
 }
