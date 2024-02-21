@@ -14,10 +14,7 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    @GetMapping({"/brands", "/brands/"})
-    public String[] getGenres() {
-        return new String[] {"bmw", "mercedes", "audi", "volvo", "fiat", "renault"};
-    }
+
 
     @PostMapping({"/review", "/review/"})
     public ReviewDTO addReview(@RequestBody ReviewDTO reviewDTO) {

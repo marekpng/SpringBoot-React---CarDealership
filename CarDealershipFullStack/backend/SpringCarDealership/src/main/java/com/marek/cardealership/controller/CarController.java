@@ -1,6 +1,7 @@
 package com.marek.cardealership.controller;
 
 import com.marek.cardealership.dto.CarDTO;
+import com.marek.cardealership.entity.filter.CarFilter;
 import com.marek.cardealership.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -15,6 +16,13 @@ public class CarController {
     @Autowired
     private CarService carService;
 
+
+    @GetMapping({"/brands", "/brands/"})
+    public String[] getGenres() {
+        return new String[] {"BMW", "Mercedes", "Audi", "Volvo", "Fiat", "Renault"};
+    }
+
+
 //    @Secured("ROLE_ADMIN")
     @PostMapping({"/cars", "/cars/"})
     public CarDTO addCar(@RequestBody CarDTO carDTO) {
@@ -23,8 +31,8 @@ public class CarController {
     }
 
     @GetMapping({"/cars", "/cars/"})
-    public List<CarDTO> getAllCars() {
-        return carService.getAllCars();
+    public List<CarDTO> getAllCars(CarFilter carFilter) {
+        return carService.getAllCars(carFilter);
     }
 
     @GetMapping({"/car/{carId}", "/car/{carId}/"})

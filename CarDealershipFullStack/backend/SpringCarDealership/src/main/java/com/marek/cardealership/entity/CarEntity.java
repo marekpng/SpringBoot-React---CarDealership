@@ -34,7 +34,11 @@ public class CarEntity {
     @Column(nullable = false)
     private String image;
 
+
+
     @OneToMany(mappedBy = "carEntity")
     private List<ReviewEntity> reviews;
+
+
 
 }

@@ -3,8 +3,6 @@ package com.marek.cardealership.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity(name = "reviews")
@@ -20,6 +18,7 @@ public class ReviewEntity {
 
     @Column(nullable = false)
     private String userEmail;
+
 
     @ManyToOne
     private CarEntity carEntity;

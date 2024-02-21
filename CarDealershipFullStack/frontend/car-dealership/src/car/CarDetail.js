@@ -85,11 +85,11 @@ const CarDetail = () => {
         <div className="car-detail">
       <h2>{carDetail.brand} {carDetail.model}</h2>
       <img src={carDetail.image} alt={carDetail.brand} />
-      <p><strong>Price:</strong> {carDetail.price}</p>
+      <p><strong>Price:</strong> {carDetail.price} €</p>
       <p><strong>Year:</strong> {carDetail.year}</p>
-      <p>{carDetail.description}</p>
+      <p><strong>Description:</strong> {carDetail.description}</p>
       <div className="contact-info">
-        <h3>Kontaktne informacie</h3>
+        <h3 style={{color: 'black'}}>Kontaktne informacie</h3>
         <p>Pre viac informacii prosim kontaktujte nasledovne:</p>
         <p><strong>Phone:</strong> +1234567890</p>
         <p><strong>Email:</strong> info@example.com</p>
@@ -99,7 +99,7 @@ const CarDetail = () => {
       <button className="btn btn-success" onClick={() => setShowAddReviewForm(!showAddReviewForm)}>{showAddReviewForm ? 'Skryt' : 'Pridat recenziu'}</button>
             {showAddReviewForm && (
                 <form onSubmit={handleAddReview}>
-                    <h3>Pridať recenziu</h3>
+                    <h3 style={{color: 'black'}}>Pridať recenziu</h3>
                     <div className="form-group">
                         <label htmlFor="userEmail" style={{ color: 'black' }}>Email address</label>
                         <input type="email" className="form-control" id="userEmail" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} placeholder="Enter email" />
@@ -119,7 +119,7 @@ const CarDetail = () => {
       <button className='btn btn-primary' onClick={handleShowReviews}>{showReviews ? 'Skryť recenzie' : 'Zobraziť recenzie'}</button>
             {showReviews && (
                 <div>
-                    <h3>Recenzie auta</h3>
+                    <h3 style={{color: 'black'}}>Recenzie</h3>
                     {reviews.length > 0 ? (
                         <ul>
                             {reviews.map(review => (

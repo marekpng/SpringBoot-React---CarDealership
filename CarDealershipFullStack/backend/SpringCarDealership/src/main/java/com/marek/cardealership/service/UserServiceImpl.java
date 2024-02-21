@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
         public UserDTO createUser(UserDTO model) {
             try {
                 UserEntity newUserEntity = new UserEntity();
-//            newUserEntity.setAdmin(false);
+
                 newUserEntity.setEmail(model.getEmail());
                 newUserEntity.setPassword(passwordEncoder.encode(model.getPassword()));
 

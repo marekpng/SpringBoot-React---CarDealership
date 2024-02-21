@@ -1,11 +1,13 @@
 package com.marek.cardealership.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -19,5 +21,6 @@ public class CarDTO {
     private int year;
     private String description;
     private String image;
+
 
 }
