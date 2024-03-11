@@ -12,7 +12,7 @@ public interface ReviewService {
 
     ReviewDTO getReview(Long id);
 
-    List<ReviewDTO> gettAllReviewsByCarId(Long carId);
+    List<ReviewDTO> getAllReviewsByCarId(Long carId);
 
     ReviewDTO removeReview(Long id);
 

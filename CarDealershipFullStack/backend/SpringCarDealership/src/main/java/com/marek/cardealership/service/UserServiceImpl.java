@@ -14,37 +14,37 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService{
 
-        @Autowired
-        private PasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-        @Autowired
-        private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-        @Override
-        public UserDTO createUser(UserDTO model) {
-            try {
-                UserEntity newUserEntity = new UserEntity();
+    @Override
+    public UserDTO createUser(UserDTO model) {
+        try {
+            UserEntity newUserEntity = new UserEntity();
 
-                newUserEntity.setEmail(model.getEmail());
-                newUserEntity.setPassword(passwordEncoder.encode(model.getPassword()));
+            newUserEntity.setEmail(model.getEmail());
+            newUserEntity.setPassword(passwordEncoder.encode(model.getPassword()));
 
-                userRepository.save(newUserEntity);
+            userRepository.save(newUserEntity);
 
-                UserDTO dto = new UserDTO();
-                dto.setUserId(newUserEntity.getUserId());
-                dto.setEmail(newUserEntity.getEmail());
-                return dto;
+            UserDTO dto = new UserDTO();
+            dto.setUserId(newUserEntity.getUserId());
+            dto.setEmail(newUserEntity.getEmail());
+            return dto;
 
-            } catch (DataIntegrityViolationException e) {
-                throw new DuplicateEmailException();
-            }
+        } catch (DataIntegrityViolationException e) {
+            throw new DuplicateEmailException();
         }
+    }
 
-        @Override
-        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-            return userRepository.findByEmail(username)
-                    .orElseThrow(() -> new UsernameNotFoundException("USERNAME " + username + " not found"));
-        }
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("USERNAME " + username + " not found"));
+    }
 }
 
 

@@ -25,6 +25,7 @@ public class ReviewServiceImpl implements ReviewService {
     public ReviewDTO addReview(ReviewDTO reviewDTO) {
         ReviewEntity review = reviewMapper.toEntity(reviewDTO);
 
+
         review.setCarEntity(carRepository.getReferenceById(reviewDTO.getCar_entity_id()));
         ReviewEntity saved = reviewRepository.save(review);
         return reviewMapper.toDTO(saved);
@@ -49,7 +50,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public List<ReviewDTO> gettAllReviewsByCarId(Long carId) {
+    public List<ReviewDTO> getAllReviewsByCarId(Long carId) {
         List<ReviewDTO> result = new ArrayList<>();
         for(ReviewEntity review : reviewRepository.findAll()) {
             if(review.getCarEntity().getId() == carId) {

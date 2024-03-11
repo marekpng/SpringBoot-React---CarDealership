@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "car")
@@ -33,6 +34,14 @@ public class CarEntity {
 
     @Column(nullable = false)
     private String image;
+
+    @Column(nullable = false)
+    @ManyToMany
+    @JoinTable(name = "car_feature",
+            joinColumns = @JoinColumn(name = "car_id"),
+            inverseJoinColumns = @JoinColumn(name = "feature_id")
+    )
+    private List<FeatureEntity> features = new ArrayList<>();
 
 
 

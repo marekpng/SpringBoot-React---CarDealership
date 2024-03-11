@@ -23,7 +23,7 @@ public class CarController {
     }
 
 
-//    @Secured("ROLE_ADMIN")
+    //    @Secured("ROLE_ADMIN")
     @PostMapping({"/cars", "/cars/"})
     public CarDTO addCar(@RequestBody CarDTO carDTO) {
         return carService.addCar(carDTO);
@@ -41,13 +41,13 @@ public class CarController {
 
     }
 
-//    @Secured("ROLE_ADMIN")
+    //    @Secured("ROLE_ADMIN")
     @PutMapping({"/car/{carId}", "/car/{carId}/"})
     public CarDTO editCar(@PathVariable Long carId, @RequestBody CarDTO carDTO) {
         return carService.editCar(carDTO,carId);
     }
 
-//    @Secured("ROLE_ADMIN")
+    //    @Secured("ROLE_ADMIN")
     @DeleteMapping({"/car/{carId}", "/car/{carId}/"})
     public CarDTO deleteCar(@PathVariable Long carId){
         return carService.removeCar(carId);

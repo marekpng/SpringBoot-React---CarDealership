@@ -1,6 +1,8 @@
 package com.marek.cardealership.dto;
 
+import com.marek.cardealership.entity.FeatureEntity;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,10 @@ public class CarDTO {
     private int year;
     private String description;
     private String image;
+
+    @NotNull
+    private List<@Positive Long> featureIDs;
+
 
 
 }

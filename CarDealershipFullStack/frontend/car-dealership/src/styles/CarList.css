@@ -1,28 +1,28 @@
-/* .car-list {
+.car-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     color:rgb(22, 27, 27)
-  } */
+  }
   
   .car-box {
     width: calc(33.33% - 20px);
     margin-bottom: 20px;
     border: 1px solid #ccc;
     padding: 20px;
-    background-color: #f0f0f0; /* Sivá farba pozadia */
+    background-color: #f0f0f0; 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .car-box:hover {
-    background-color: #dcdcdc; /* Farba pozadia po najazdení kurzorom */
+    background-color: #dcdcdc; 
   }
   
   .car-image {
     max-width: 100%;
     height: auto;
-    display: block; /* Odstrániť medzery na vrchu a spodku obrázka */
+    display: block; 
   }
 
   

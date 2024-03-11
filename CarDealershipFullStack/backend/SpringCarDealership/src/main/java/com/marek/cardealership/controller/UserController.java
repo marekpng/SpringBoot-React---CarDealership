@@ -39,7 +39,7 @@ public class UserController {
     @DeleteMapping({"/auth", "/auth/"})
     public String logout(HttpServletRequest req) throws ServletException {
         req.logout();
-        return "Uživatel odhlášen";
+        return "Uživatel odhlasený";
     }
 
     @GetMapping("/auth")

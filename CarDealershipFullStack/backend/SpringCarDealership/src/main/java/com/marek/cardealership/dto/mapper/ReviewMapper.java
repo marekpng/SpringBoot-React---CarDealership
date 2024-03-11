@@ -9,6 +9,7 @@ import org.mapstruct.MappingTarget;
 @Mapper(componentModel = "spring")
 public interface ReviewMapper {
 
+
     ReviewEntity toEntity(ReviewDTO source);
 
     @Mapping(target = "car_entity_id", source = "carEntity.id")

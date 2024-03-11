@@ -30,8 +30,8 @@ public class ReviewController {
     }
 
     @GetMapping({"/review/{carId}", "/review/{carId}/"})
-    public List<ReviewDTO> gettAllReviewsByCarId(@PathVariable Long carId) {
-        return reviewService.gettAllReviewsByCarId(carId);
+    public List<ReviewDTO> getAllReviewsByCarId(@PathVariable Long carId) {
+        return reviewService.getAllReviewsByCarId(carId);
 
     }
 
